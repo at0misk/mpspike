@@ -9,6 +9,8 @@ import { HomePage } from './pages/HomePage';
 import { LandingPage } from './pages/LandingPage';
 import { PatientPage } from './pages/PatientPage';
 import { ResourcePage } from './pages/ResourcePage';
+import { PatientRegisterPage } from './pages/PatientRegisterPage';
+import { PractitionerRegisterPage } from './pages/PractitionerRegisterPage';
 import { SignInPage } from './pages/SignInPage';
 
 export function App(): JSX.Element | null {
@@ -33,6 +35,8 @@ export function App(): JSX.Element | null {
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={profile ? <HomePage /> : <LandingPage />} />
+            <Route path="/patient-register" element={<PatientRegisterPage />} />
+            <Route path="/practitioner-register" element={<PractitionerRegisterPage />} />
             <Route path="/signin" element={<SignInPage />} />
             <Route path="/Patient/:id" element={<PatientPage />}>
               <Route index element={<PatientOverview />} />

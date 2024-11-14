@@ -10,7 +10,11 @@ import { App } from './App';
 
 const medplum = new MedplumClient({
   onUnauthenticated: () => (window.location.href = '/'),
-  // baseUrl: 'http://localhost:8103/', //Uncomment this to run against the server on your localhost; also change `googleClientId` in `./pages/SignInPage.tsx`
+  // baseUrl: 'http://localhost:3000/', //Uncomment this to run against the server on your localhost; also change `googleClientId` in `./pages/SignInPage.tsx`
+  // ^^ This will make medplum api requests from the client method against the baseUrl. Could be useful if we want things to
+  // flow through our server first before hitting medplum
+  
+  // More config options here: https://www.medplum.com/docs/sdk/core.medplumclientoptions
 });
 
 const theme = createTheme({
@@ -39,7 +43,7 @@ root.render(
     <BrowserRouter>
       <MedplumProvider medplum={medplum}>
         <MantineProvider theme={theme}>
-          <App />
+          <App /> 
         </MantineProvider>
       </MedplumProvider>
     </BrowserRouter>
