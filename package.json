@@ -26,7 +26,7 @@
     "@medplum/core": "3.2.20",
     "@medplum/eslint-config": "3.2.20",
     "@medplum/fhirtypes": "3.2.20",
-    "@medplum/react": "3.2.20",
+    "@medplum/react": "3.2.30",
     "@tabler/icons-react": "3.17.0",
     "@types/node": "22.8.7",
     "@types/react": "18.3.12",
